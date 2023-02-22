@@ -14,7 +14,7 @@ h1 {
 
 .main {
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -60%);
     width: 100%;
@@ -25,7 +25,7 @@ h1 {
     flex-direction: column;
 }    
 
-#digital-clock {
+#current-time {
     color: white;
     text-shadow: 3px 3px 0px gray;
     font-size: 50px;
@@ -33,43 +33,29 @@ h1 {
     margin: 1rem 0;
 }
 
-#create-alarm {
-    color: darkgoldenrod;
-    font-size: 20px;
+#current-time,
+.current-time,
+.create-alarm,
+h1,
+#active-alarm{ 
+    text-align: center;
 }
 
-#alarm-time {
-    color: darkcyan;
-    font-size: 20px;
-}
-
+.create-alarm,
+.alarm-input,
 #active-alarm {
-    color: darkmagenta;
-    font-size: 20px;
+    margin-top :20px;
 }
 
-#clear-alarm {
-    color: darkgreen;
-    font-size: 20px;
+input {
+    width: 100px;
+    height: 30px;
 }
 
-#alarm-confirm {
-    color: darkslateblue;
-    font-size: 20px;
+button {
+    font-size: 18px;
 }
 
-#button {
-    color: deepskyblue;
-    font-size: 20px;
-}
-
-
-
-
-
-
-
-
-
-
-
+/*#active-alarm {
+    display: none;
+}*/

@@ -1,36 +1,60 @@
+//Show clock
+function currentTime() {
+    const d = new Date();
+    document.getElementById("current-time").innerHTML = d.toLocaleTimeString();
+}
+// Update time every second
+setInterval(currentTime, 1000);
 
-const createAlarm = document.getElementById("create-alarm");
-
-const activeAlarm = document.getElementById("active-alarm");
-const clearAlarm = document.getElementById("clear-alarm");
+const createAlarm = document.querySelector("create-alarm");
 
 const alarmTime = document.getElementById("alarm-time");
 
-const alarmConfirmContainer = document.getElementById("alarm-confirm");
+const activeAlarm = document.getElementById("active-alarm");
 
+const clearAlarm = document.getElementById("clear-alarm");
+
+
+const alarmConfirmContainer = document.getElementById("alarm-confirm");
 const alarmConfirm = (time) => `Alarm set for time ${time}`;
 
-const handleSetAlarm = (event) => {
+const handleSubmit = (event) => {
+    function setAlarm() {
+        document.getElementById("setAlarm").submit();
+        createAlarm.style.display = "none";
+        activeAlarm.style.display = "block";
+        alarmConfirmContainer.style.display = "block";
+    }
+
+
+    /*
     event.preventDefault();
-};
-
-// Function to check if alarm needs to be triggered
-    const checkAlarm = () => {
-        if (alarmTime == digitalClock) {
-        alert("It's Time!!");
-        }
-    };
-
-    document.forms[0].reset();
+    alarmTime.document.forms[0].reset();
     createAlarm.style.display = "none";
     activeAlarm.style.display = "block";
-    alarmConfirmContainer.innerHTML = alarmConfirm(time);
+    alarmConfirmContainer.innerHTML = alarmConfirm(alarmTime);
+};*/
+
+const handleClear = () => {
+    alarmTime = "";
+    activeAlarm.style.display = "none";
+    createAlarm.style.display = "block";
+};
+
+clearAlarm.addEventListener("click", handleClear);
+document.forms[0].addEventListener("submit", handleSubmit);
+
+//See if clock = alarm
+const checkAlarm = (currentTime) => {
+    if (alarmTime == currentTime) {
+        alert("It's Time!!");
+    }
+};
 
 //Show clock
-function digitalClock() {
+function currentTime() {
     const d = new Date();
-    document.getElementById("digital-clock").innerHTML = d.toLocaleTimeString();
+    document.getElementById("current-time").innerHTML = d.toLocaleTimeString();
 }
-
-    // Update time every second
-setInterval(digitalClock, 1000);
+// Update time every second
+setInterval(currentTime, 1000);
